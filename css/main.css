@@ -35,6 +35,8 @@ html {
     position: absolute;
     bottom: 50%; 
     right: calc(150px - 7px); 
+    transition: all 6s linear;
+    transform-origin: bottom center;
 }
 
 .center {
@@ -42,4 +44,42 @@ html {
     position: absolute;
     bottom: calc(150px - 14px);
     right: calc(150px - 14px);
+}
+
+.clock-face:target .hand-hour {
+    transform: rotate(360deg);
+}
+
+.clock-face:target .hand-minute {
+    transform: rotate(4320deg);
+}
+
+.forward {
+    color: white;
+    background-color: green;
+    width: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.backwards {
+    color: white;
+    background-color: red;
+    width: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.forward:hover,
+.backwards:hover {
+    background-color: white;
+    color: black;
+    transition: all .5s linear;
+    opacity: 1;
 }
